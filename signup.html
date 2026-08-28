@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Tracker - Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+  <div class="login-box">
+    <h1>Study Tracker</h1>
+    <p class="sub">Create an account to get started</p>
+
+    <form id="signupForm">
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password (at least 6 characters)" required>
+      <input type="password" id="signupPasswordConfirm" placeholder="Confirm password" required>
+      <p id="signupError" class="error-text"></p>
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <p class="hint">Already have an account? <a href="index.html">Log in</a></p>
+  </div>
+
+  <script type="module" src="lib/firebaseclient.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

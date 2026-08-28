@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History - Study Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><a href="home.html" class="logo-link">Study Tracker</a></h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="history.html" class="active">History</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <span id="welcomeMsg"></span>
+      <button id="logoutBtn" class="btn-small">Log Out</button>
+    </nav>
+  </header>
+
+  <section>
+    <h2 class="section-title">Your Quiz History</h2>
+    <p class="section-sub">Every quiz you've taken, most recent first</p>
+
+    <div class="history-header">
+      <span>Tense</span>
+      <span>Score</span>
+      <span>Date</span>
+    </div>
+    <div id="historyList">
+      <!-- filled in by script.js -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Study Tracker. Made for school project.
+  </footer>
+
+  <script type="module" src="lib/firebaseclient.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

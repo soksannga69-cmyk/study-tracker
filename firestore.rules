@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Each quiz score belongs to one user (the "uid" field).
+    // - Anyone logged in can create a new score, but only if the uid on
+    //   it matches their own account (no saving scores as someone else).
+    // - A user can only read scores where the uid matches their own
+    //   account (no seeing other people's quiz history).
+    // - Nobody can edit or delete a score once it's saved - it's a
+    //   history log, not editable data.
+    match /scores/{scoreId} {
+      allow create: if request.auth != null
+                    && request.resource.data.uid == request.auth.uid;
+      allow read: if request.auth != null
+                  && resource.data.uid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    // One profile document per account, created on sign up. A user can
+    // only create or read their own document (id == their uid).
+    match /users/{userId} {
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow update, delete: if false;
+    }
+  }
+}

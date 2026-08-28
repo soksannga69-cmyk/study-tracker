@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Study Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1><a href="home.html" class="logo-link">Study Tracker</a></h1>
+    <nav>
+      <a href="home.html" class="active">Home</a>
+      <a href="history.html">History</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <span id="welcomeMsg"></span>
+      <button id="logoutBtn" class="btn-small">Log Out</button>
+    </nav>
+  </header>
+
+  <section>
+    <h2 class="section-title">Choose a Tense</h2>
+    <p class="section-sub">Pick a tense to learn the structure, then try the quiz</p>
+
+    <div class="grid" id="tenseGrid">
+      <!-- filled in by script.js -->
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Study Tracker. Made for school project.
+  </footer>
+
+  <script type="module" src="lib/firebaseclient.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
